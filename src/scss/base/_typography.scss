@@ -1,0 +1,102 @@
+html {
+    font-size: 10px;
+}
+body {
+    font-family: $font-lato;
+    font-weight: $font-weight-3;
+    background-color: $bg-light;
+    overflow-x: hidden;
+}
+/* Headings */
+h1 {
+    font-size: 2.4rem;
+}
+h2 {
+    font-size: 2.3rem;
+}
+h3 {
+    font-size: 2.1rem;
+}
+h4 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.9rem;
+}
+h6 {
+    font-size: 1.8rem;
+}
+p {
+    font-size: 1.7rem;
+}
+span {
+    font-size: 1.5rem;
+}
+strong,
+b {
+    font-size: 1.6rem;
+    font-weight: $font-weight-7;
+}
+a {
+    font-size: 1.6rem;
+}
+small {
+    font-size: 1.2rem;
+}
+p,
+span,
+a,
+time {
+    font-weight: $font-weight-4;
+}
+
+/* Utilities */
+.container {
+    max-width: 128rem;
+    margin: 0 auto;
+    padding:0 1.6rem;
+}
+.ml-auto {
+    margin-left: auto;
+}
+.text-white {
+    color: white;
+}
+.profile {
+    .user-profile {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+@mixin media($screensize) {
+    @if ($screensize == xxlarge) {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if ($screensize == xlarge) {
+        @media (max-width: 1150px) {
+            @content;
+        }
+    }
+
+    @if ($screensize == large) {
+        @media (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @if ($screensize == medium) {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if ($screensize == small) {
+        @media (max-width: 576px) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "dev-to-clone",
+  "version": "1.0.0",
+  "description": "Dev-To Home Page Clone Project",
+  "private": true,
+  "scripts": {
+    "dev": "parcel public/index.html --out-dir development -p 3000",
+    "build": "parcel build --no-source-maps --no-minify public/index.html --out-dir dist --public-url ./"
+  },
+  "keywords": [],
+  "author": "lKotan",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/runtime-corejs2": "^7.13.17",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.11"
+  }
+}

@@ -1,0 +1,17 @@
+.notify-icon,
+.connect-icon,
+.search-icon,
+.search-close,
+.hamburger-close {
+    color: $icon-color;
+    padding: 0.5rem;
+    margin-left: 1.2rem;
+}
+.notify-icon:hover,
+.connect-icon:hover,
+.search-icon:hover,
+.search-close:hover,
+.hamburger-close:hover {
+    background-color: $bg-icon-hover;
+    border-radius: 50%;
+}

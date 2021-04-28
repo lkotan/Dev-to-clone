@@ -1,0 +1,44 @@
+.btn {
+    padding: 0.8rem 1rem;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: transparent;
+}
+.btn-dark {
+    @include media(small){
+        padding: 0 0.5rem;
+    }
+    background-color: $dark-color;
+    text-transform: uppercase;
+    transition: $all-5;
+    width: 5rem;
+    height: 4rem;
+    line-height: 2rem;
+    padding: 0;
+
+    &:hover {
+        background-color: $bg-dark-hover;
+    }
+}
+
+.btn-primary {
+    background-color: $bg-primary;
+    transition: $all-5;
+
+    &:hover {
+        background-color: $bg-primary-hover;
+    }
+}
+.btn-menu {
+    display: none;
+    &:hover {
+        background-color:$bg-icon-hover;
+        border-radius: 50%;
+    }
+    @include media(medium) {
+        display: block;
+        margin: 0 0.8rem;
+    }
+}

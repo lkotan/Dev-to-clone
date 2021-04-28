@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* Fonts */
+$font-lato:'Lato', sans-serif;
+$font-weight-3:300;
+$font-weight-4:400;
+$font-weight-7:700;
+
+/* Colors */
+$dark-color:#08090a;
+$bg-dark-hover:#363d44;
+$white-color:#fff;
+$grey-color:#535252;
+$grey-light-color:#d2d6db;
+$grey-light-hover:#b5bdc4;
+$bg-light:#eef0f1;
+$bg-primary:#3b49df;
+$bg-primary-hover:#323ebe;
+$icon-color:#08090a;
+$bg-icon-hover:rgba(0,0,0,0.035);
+$border-img-profile:rgb(235, 232, 232);
+$bg-menu-item-hover:rgba(8,9,10,0.05);
+$bg-nav-tab-hover:rgba(59,73,223,0.1);
+$author-name-color:#4d5760;
+$card-tag-color:#64707d;
+$card-link-color:#202428;
+$bg-card:#f9fafa;
+$bg-footer:#d2d6db;
+
+/* Transition */
+$all-5:all .5s;

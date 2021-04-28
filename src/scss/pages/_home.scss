@@ -1,0 +1,415 @@
+/* Mobile and Desktop Nav */
+.nav-top,
+.nav-mobile {
+    margin-bottom: 3rem;
+
+    .nav-item {
+        margin: 0 1rem;
+        padding: 1rem 0.5rem;
+        border-radius: 0.4rem;
+
+        &:last-child {
+            padding-left: 4.5rem;
+        }
+
+        &:hover {
+            background-color: $bg-menu-item-hover;
+        }
+        &:hover > .nav-link {
+            color: $bg-primary-hover;
+        }
+
+        .nav-link {
+            @include display(flex, center);
+            span {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: none;
+
+    &-content {
+        background: $white-color;
+        max-width: 300px;
+        width: 90%;
+        z-index: 1000;
+        position: relative;
+        height: 100%;
+        overflow-y: auto;
+    }
+    &-header {
+        @include display(flex, center, space-between);
+        padding: 1.5rem;
+        border-bottom: 1px solid $border-img-profile;
+    }
+    &-close {
+        display: block;
+    }
+
+    &-overlay {
+        background: $dark-color;
+        opacity: 0.5;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+    }
+}
+
+.layout {
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    @include display(flex, "", space-between);
+
+    &-left {
+        @include flex(0, 0, 20%);
+        @include media(large) {
+            @include flex(0, 0, 30%);
+        }
+        @include media(medium) {
+            display: none;
+        }
+
+        .nav-bottom {
+            @include media(medium) {
+                display: none;
+            }
+
+            margin-right: 1.5rem;
+
+            .header {
+                @include display(flex, center, space-between);
+                margin-left: 1rem;
+                a {
+                    padding: 1rem;
+                    border-radius: 0.4rem;
+                    transition: $all-5;
+
+                    svg,
+                    path {
+                        fill: currentColor;
+                    }
+                    &:hover {
+                        background-color: $bg-icon-hover;
+                        color: $dark-color;
+                    }
+                }
+                h6 {
+                    font-size: 1.6rem;
+                }
+            }
+            .tags {
+                @include display(flex, start, "", column);
+                margin-top: 1.7rem;
+                height: 20rem;
+                overflow-y: scroll;
+
+                .tag-item {
+                    margin-bottom: 0.5rem;
+                    padding: 1rem 0.5rem;
+                    border-radius: 0.4rem;
+                    width: 100%;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $bg-menu-item-hover;
+                    }
+                    a {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        @include flex(0, 0, 55%);
+        @include media(large) {
+            @include flex(0, 0, 70%);
+        }
+        @include media(medium) {
+            @include flex(0, 0, 100%);
+        }
+        .header {
+            @include display(flex, center, space-between);
+            padding: 0.8rem 1.2rem;
+            //position: relative;
+
+            @include media(medium) {
+                margin: 0 1rem;
+            }
+
+            div{
+                display: none;
+                @include media(small) {
+                    display: block;
+                }
+            }
+
+            .select {
+                display: block;
+                margin-right: 0.5rem;
+                padding: 1rem;
+                padding-right: 3rem;
+                font-size: 1.6rem;
+                border-radius: 6px;
+                outline: none;
+                appearance: none;
+                cursor: pointer;
+
+                &-icon {
+                    margin: 0 0 -2.8rem 6rem;
+                    padding-top: -2rem;
+                    display: block;
+                }
+                &:focus {
+                    background-color: $white-color;
+                    border-color: $bg-primary;
+                    box-shadow: 0.1rem 0.1rem 0 $bg-primary;
+                }
+            }
+
+            .nav-tab {
+                @include media(small) {
+                    display: none;
+                }
+                margin-right: 1rem;
+                .tab-item {
+                    margin-left: 1rem;
+                    padding: 1rem 0.7rem;
+                    border-radius: 0.4rem;
+                    font-size: 1.7rem;
+                    color: $bg-dark-hover;
+                    transition: $all-5;
+
+                    &:hover {
+                        color: $bg-primary;
+                        background-color: $bg-nav-tab-hover;
+                    }
+                }
+
+                .tab-current {
+                    color: $dark-color;
+                    position: relative;
+
+                    &:hover::after {
+                        left: 0;
+                        right: 0;
+                        border-radius: 0 0 0.6rem 0.6rem;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0.5rem;
+                        right: 0.5rem;
+                        bottom: 0;
+                        height: 0.3rem;
+                        background-color: $bg-primary;
+                        transition: $all-5;
+                    }
+                }
+            }
+        }
+        .card {
+            &:focus-within {
+                box-shadow: 0 0 0 0.2rem $bg-primary;
+            }
+            @include media(medium) {
+                margin-right: 0;
+            }
+
+            &-body {
+                .top {
+                    @include display(flex, center);
+                    .author {
+                        margin-left: 1rem;
+                        color: $author-name-color;
+
+                        &-name {
+                            font-size: 1.5rem;
+                            margin-bottom: 0.4rem;
+                            &:hover {
+                                color: $dark-color;
+                            }
+                        }
+                        .created-post {
+                            font-size: 1.3rem;
+                            &:hover {
+                                color: $dark-color;
+                            }
+                        }
+                    }
+                }
+                .post {
+                    margin: 1.3rem 0 1rem 4rem;
+
+                    .title {
+                        margin-bottom: 1.3rem;
+
+                        a {
+                            color: $dark-color;
+                            font-size: 2.4rem;
+                            font-weight: $font-weight-7;
+
+                            &:focus {
+                                outline: none;
+                            }
+                            &:hover {
+                                color: $bg-primary-hover;
+                            }
+                        }
+                    }
+                    .tags {
+                        .item {
+                            margin-right: 1rem;
+                            color: $card-tag-color;
+
+                            &:hover {
+                                color: $dark-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-footer {
+                margin-left: 4rem;
+                padding-bottom: 2rem;
+
+                @include display(flex, "", space-between);
+
+                .details {
+                    @include display(flex);
+
+                    .reaction,
+                    .comment {
+                        @include display(flex, center);
+                        padding: 0.5rem;
+                        border-radius: 0.4rem;
+
+                        span {
+                            font-weight: $font-weight-3;
+                            font-size: 1.4rem;
+                        }
+
+                        &:hover {
+                            background-color: $bg-menu-item-hover;
+                        }
+                    }
+                    .reaction {
+                        span {
+                            margin: 0 1.5rem 0 0.5rem;
+                        }
+                    }
+                    .comment {
+                        span {
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+
+                .save {
+                    margin-right: 1.5rem;
+
+                    .btn-grey {
+                        color: $dark-color;
+                        background-color: $grey-light-color;
+                        margin-left: 1rem;
+                        font-size: 1.4rem;
+                        transition: $all-5;
+
+                        &:hover {
+                            background-color: $grey-light-hover;
+                        }
+                    }
+                    small {
+                        color: $card-tag-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &-right {
+        @include flex(0, 0, 25%);
+
+        @include media(large) {
+            display: none;
+        }
+
+        .card {
+            background-color: $bg-card;
+            &-header {
+                @include display(flex, center, space-between);
+                padding: 1.2rem 1.6rem;
+                border-bottom: 1px solid $bg-light;
+
+                .action-link {
+                    color: $bg-primary;
+                    font-size: 1.4rem;
+                }
+            }
+            &-link {
+                display: block;
+                padding: 1.6rem;
+                line-height: 2.4rem;
+                color: $card-link-color;
+                border-bottom: 1px solid $bg-light;
+
+                &:hover {
+                    color: $bg-primary-hover;
+                    background-color: $white-color;
+                }
+
+                &-last {
+                    @include display(flex, "", center);
+                    color: $dark-color;
+
+                    &:hover {
+                        color: $bg-primary;
+                        background-color: inherit;
+                    }
+                }
+
+                .link-secondary {
+                    padding-top: 0.4rem;
+                    font-size: 1.4rem;
+                    color: $author-name-color;
+                }
+            }
+        }
+
+        .news {
+            .news-link {
+                color: $dark-color;
+                font-size: 2rem;
+                font-weight: $font-weight-7;
+
+                &:hover {
+                    color: $bg-primary-hover;
+                }
+            }
+            .link-secondary {
+                .chip {
+                    color: $white-color;
+                    background-color: $bg-primary;
+                    padding: 0.4rem;
+                    font-size: 1.2rem;
+                    border-radius: 0.5rem;
+                }
+            }
+        }
+    }
+}

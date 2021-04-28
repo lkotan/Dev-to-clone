@@ -1,0 +1,80 @@
+footer {
+    background-color: $bg-footer;
+    text-align: center;
+    padding: 4.8rem;
+    position: relative;
+    .container {
+        max-width: 736px;
+        padding: 1.6rem;
+    }
+    .footer-nav {
+        @include media(medium) {
+            margin-top: 1rem;
+        }
+    }
+    .footer-link {
+        padding: 0.8rem;
+        display: inline-block;
+        color: $card-link-color;
+
+        &:hover {
+            color: $bg-primary-hover;
+        }
+    }
+    .social {
+        padding-top: 1.6rem;
+
+        &-link {
+            margin: 0 0.8rem;
+            color: $card-tag-color;
+            svg,
+            path {
+                fill: currentColor;
+            }
+            &:hover {
+                color: $author-name-color;
+            }
+        }
+    }
+    .footer-driver {
+        border: none;
+        border-top: 1px solid $author-name-color;
+        opacity: 0.15;
+        width: 20%;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .footer-description{
+        a{
+            font-weight: $font-weight-7;
+            color: $dark-color;
+
+            &:hover{
+                color: $bg-primary-hover;
+            }
+        }
+    }
+    div.footer-description{
+        margin:1.6rem 0;
+        a{
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
+    }
+    p{
+        text-size-adjust: 100%;
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        color: $author-name-color;
+    }
+    .mascot-img {
+        position: absolute;
+        top: -0.2rem;
+        right: 4.8rem;
+        display: block;
+
+        @include media(large){
+            display: none;
+        }
+    }
+}

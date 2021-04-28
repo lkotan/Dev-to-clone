@@ -1,0 +1,166 @@
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0.6rem 0;
+    background-color: $white-color;
+
+    .container {
+        @include display(flex, center);
+
+        @include media(xxlarge) {
+            padding: 0 1rem;
+        }
+
+        @include media(medium) {
+            @include display(flex, center, space-between);
+        }
+
+        @include media(small) {
+            padding: 0;
+        }
+    }
+
+    .header-left {
+        @include flex(0, 0, 40%);
+        @include display(flex);
+
+        @include media(medium) {
+            @include flex(0, 0, 60%);
+        }
+
+        .search-input {
+            width: 80%;
+            outline: none;
+            padding: 0.9rem 0.7rem;
+            margin-left: 1.5rem;
+            border: 1px solid #b5bdc4;
+            border-radius: 0.4rem;
+            color: $grey-color;
+            transition: $all-5;
+
+            @include media(medium) {
+                width: 75%;
+                display: none;
+            }
+
+            &.show {
+                display: block;
+            }
+
+            &::placeholder {
+                font-size: 1.5rem;
+            }
+
+            &:focus {
+                background-color: $white-color;
+                border-color: $bg-primary;
+                box-shadow: 1px 1px 0 $bg-primary;
+            }
+        }
+    }
+    .header-right {
+        @include display(flex, center);
+
+        .btn-primary {
+            @include media(medium) {
+                display: none;
+            }
+        }
+
+        .search-icon,
+        .search-close {
+            display: none;
+        }
+        .search-close.show,
+        .search-icon.show {
+            @include media(medium) {
+                display: block;
+            }
+        }
+
+        .header-profile {
+            margin-left: 1.2rem;
+            position: relative;
+
+            .profile {
+                display: block;
+                padding: 0.1rem;
+                border: 1px solid transparent;
+
+                &:hover {
+                    border: 1px solid $border-img-profile;
+                    border-radius: 50%;
+                }
+                .user-profile {
+                    border-radius: 50%;
+                }
+            }
+            &:hover > menu {
+                opacity: 1;
+                visibility: visible;
+            }
+           
+        }
+
+        menu {
+            position: absolute;
+            top: 1.9rem;
+            right: 1rem;
+            min-width: 25rem;
+            margin-top: 2.7rem;
+            border: 2px solid $dark-color;
+            border-radius: 0.4rem;
+            background-color: $white-color;
+            box-shadow: 0.4rem 0.4rem 0 $dark-color;
+            opacity: 0;
+            visibility: hidden;
+            transition-delay: 0.3s;
+
+            @include media(small){
+                width: 46rem;
+            }
+
+            ul {
+                li {
+                    margin: 0 0.5rem 0.5rem;
+                    padding: 1rem;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $bg-menu-item-hover;
+                    }
+                    &:hover > a {
+                        color: $bg-primary-hover;
+                    }
+                    a {
+                        color: $dark-color;
+                        font-size: 1.9rem;
+
+                        small {
+                            color: $dark-color;
+                        }
+                    }
+                }
+                .setting,
+                .first-link {
+                    border-width: 0;
+                    border-bottom-width: 1px;
+                    border-style: solid;
+                    border-color: #d2d6db;
+                    margin: 0 0 0.5rem;
+                }
+                .first-link {
+                    .user-name {
+                        div {
+                            @include display(flex, "", "", column);
+                            small {
+                                margin-top: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
