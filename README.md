@@ -2,8 +2,9 @@
 
 npm install
 
-Ue Development Mode
+Use Development Mode
 npm run dev
+
 
 Build
 npm run build
